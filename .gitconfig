@@ -1,0 +1,12 @@
+[user]
+	name = a2c6201
+	email = a2c6201@gmail.com
+[color]
+	ui = auto
+[ghq]
+	root = ~/src
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
