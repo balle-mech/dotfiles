@@ -1,5 +1,6 @@
 # cd時にtabでディレクトリ選択
-bind '"\C-o": "\C-e\C-u\er\C-y\C-a\C-k\C-y\C-e\C-u\C-y\C-y\C-m"'
+# bind '"\C-x\C-d": "ls -d */\n"'
+bind 'set show-all-if-ambiguous on'
 
 # search history
 peco-select-history() {
