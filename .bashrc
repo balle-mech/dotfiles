@@ -1,6 +1,3 @@
-# bashrc の読み込み
-source ~/.bashrc
-
 # search history
 peco-select-history() {
   local _cmd=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | peco --query "$READLINE_LINE")
