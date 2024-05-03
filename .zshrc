@@ -4,9 +4,6 @@
 #######  PATH  #######
 # ffmpeg
 export PATH="/opt/homebrew/bin/ffmpeg:$PATH"
-# mmaction2
-PYTHONPATH=. python tools/test_recognizer.py ...
-export PYTHONPATH=`$HOME/src/github.com/open-mmlab/mmaction2`:$PYTHONPATH
 # CUDA
 export PATH=/usr/local/cuda/bin:$PATH
 # Flutter
