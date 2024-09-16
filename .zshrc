@@ -2,6 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 #######  PATH  #######
+# java
+export PATH=$PATH:~/apache-maven-3.9.9/bin
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
 # ffmpeg
 export PATH="/opt/homebrew/bin/ffmpeg:$PATH"
 # CUDA
@@ -45,11 +49,12 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-#######  alias #######
+#######  `alias` #######
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias t="tig"
+alias python=python3.10
 
 #######  zshのテーマ  #######
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
