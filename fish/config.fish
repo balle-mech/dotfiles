@@ -1,3 +1,10 @@
+###########    PATH   ###########
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    # PATH
+    set PATH /opt/homebrew/bin $PATH # <-追加
+end
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
