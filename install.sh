@@ -19,7 +19,11 @@
 # # Update Homebrew recipes
 # brew update
 
-# # Install Packages
+## ======== Install Packages ========
+### ========= z =========
+# brew install z
+# fisher install jethrokuan/z
+
 # brew install git
 # brew install tig
 # brew install --cask iterm2
