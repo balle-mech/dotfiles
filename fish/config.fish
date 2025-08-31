@@ -23,3 +23,16 @@ else
 end
 # <<< conda initialize <<<
 
+# nvm 用の環境変数設定
+set -gx NVM_DIR ~/.nvm
+set -gx PATH $NVM_DIR/bin $PATH
+
+# Homebrew の nvm をロード
+if test -s (brew --prefix nvm)/nvm.sh
+    source (brew --prefix nvm)/nvm.sh
+end
+
+# bash 補完をロード
+if test -s (brew --prefix nvm)/etc/bash_completion.d/nvm
+    source (brew --prefix nvm)/etc/bash_completion.d/nvm
+end
