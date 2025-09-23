@@ -5,6 +5,7 @@ alias push='git push'
 alias st='git status'
 
 set -x PATH /opt/homebrew/bin $PATH
+set -gx PATH /opt/homebrew/lib/node_modules/.bin $PATH
 
 # ghqの管理化にあるリポジトリを一覧表示するキーバインドを設定
 function ghq-src
