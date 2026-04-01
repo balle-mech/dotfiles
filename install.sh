@@ -29,3 +29,7 @@
 # brew install --cask iterm2
 # brew install peco ghq
 # fisher install oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository
+
+## ======== Claude Code ========
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+ln -sf "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
