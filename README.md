@@ -35,3 +35,4 @@ ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
 ## 参考
 
 [dotfiles リポジトリ作成](https://qiita.com/yutkat/items/c6c7584d9795799ee164)
+[X|Claude Codeを使い始める前に。最初にやっておきたいセキュリティ設定７つ](https://x.com/nobel_824/status/2038416059167121507)
