@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "Read(**/.env.sample)",
+      "Read(**/.env.example)",
       "Bash(npm run *)",
       "Bash(npm test *)",
       "Bash(npx prettier *)",
@@ -28,7 +30,8 @@
       "Bash(wget *)",
       "Bash(nc *)",
       "Bash(ssh *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Read(**/.env*)"
     ]
   }
 }
