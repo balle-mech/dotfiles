@@ -1,4 +1,8 @@
 {
+  "sandbox": {
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false
+  },
   "permissions": {
     "allow": [
       "Read(**/.env.sample)",
