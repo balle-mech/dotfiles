@@ -19,18 +19,19 @@ echo "Existing configs backed up to ~/backup/"
 ### 3. シンボリックリンクを作成
 
 ```bash
+# dotfiles リポジトリのパスを設定（環境に合わせて変更）
+DOTFILES=~/src/dotfiles
+
 # .bashrc のリンク
-ln -sf ~/src/dotfiles/.bashrc ~/.bashrc
+ln -sf $DOTFILES/.bashrc ~/.bashrc
 
 # .gitconfig のリンク
-ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
+ln -sf $DOTFILES/.gitconfig ~/.gitconfig
 
 # fish config のリンク
 mkdir -p ~/.config/fish
-ln -sf ~/src/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -sf $DOTFILES/.config/fish/config.fish ~/.config/fish/config.fish
 ```
-
-4. dotfiles 以下でコミットして push
 
 ## 参考
 
