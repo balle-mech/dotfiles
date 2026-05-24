@@ -32,4 +32,4 @@
 
 ## ======== Claude Code ========
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
-ln -sf "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+ln -sf "$DOTFILES_DIR/.claude/settings.json" ~/.claude/settings.json

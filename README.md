@@ -20,7 +20,7 @@ echo "Existing configs backed up to ~/backup/"
 
 ```bash
 # dotfiles リポジトリのパスを設定（環境に合わせて変更）
-DOTFILES=~/src/dotfiles
+set DOTFILES ~/src/github.com/balle-mech/dotfiles
 
 # .bashrc のリンク
 ln -sf $DOTFILES/.bashrc ~/.bashrc
@@ -31,6 +31,9 @@ ln -sf $DOTFILES/.gitconfig ~/.gitconfig
 # fish config のリンク
 mkdir -p ~/.config/fish
 ln -sf $DOTFILES/.config/fish/config.fish ~/.config/fish/config.fish
+
+# claude code
+ln -sf $DOTFILES/.claude/settings.json ~/.claude/settings.json
 ```
 
 ## 参考
