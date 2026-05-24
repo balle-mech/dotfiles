@@ -20,14 +20,14 @@ echo "Existing configs backed up to ~/backup/"
 
 ```bash
 # .bashrc のリンク
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+ln -sf ~/src/dotfiles/.bashrc ~/.bashrc
 
 # .gitconfig のリンク
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/src/dotfiles/.gitconfig ~/.gitconfig
 
 # fish config のリンク
 mkdir -p ~/.config/fish
-ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
+ln -sf ~/src/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
 ```
 
 4. dotfiles 以下でコミットして push
