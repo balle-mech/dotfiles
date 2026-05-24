@@ -15,7 +15,9 @@ function ghq-src
     end
 end
 
-bind \cg ghq-src
+function fish_user_key_bindings
+    bind \cg ghq-src
+end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
