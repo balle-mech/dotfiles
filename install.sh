@@ -26,7 +26,7 @@
 
 # brew install git
 # brew install tig
-# brew install --cask iterm2
+# brew install --cask ghostty
 # brew install peco ghq
 # fisher install oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository
 
