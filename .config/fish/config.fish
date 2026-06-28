@@ -6,6 +6,10 @@ alias st='git status'
 
 set -x PATH /opt/homebrew/bin $PATH
 set -gx PATH /opt/homebrew/lib/node_modules/.bin $PATH
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# bob-the-fish theme settings
+set -g theme_powerline_fonts yes
 
 # ghqの管理化にあるリポジトリを一覧表示するキーバインドを設定
 function ghq-src
@@ -18,16 +22,3 @@ end
 function fish_user_key_bindings
     bind \cg ghq-src
 end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/fukunagaatsushi/miniforge3/bin/conda
-    eval /Users/fukunagaatsushi/miniforge3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/Users/fukunagaatsushi/miniforge3/etc/fish/conf.d/conda.fish"
-        . "/Users/fukunagaatsushi/miniforge3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/Users/fukunagaatsushi/miniforge3/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
