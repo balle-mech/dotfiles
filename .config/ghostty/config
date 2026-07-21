@@ -83,3 +83,7 @@ keybind = ctrl+cmd+l=goto_split:right
 # プロンプト間ジャンプ（Claude Codeの出力を素早く確認）
 keybind = cmd+up=jump_to_prompt:-1
 keybind = cmd+down=jump_to_prompt:1
+
+# クイックターミナル機能（どのアプリからでも呼び出せる）
+quick-terminal-position = right
+keybind = global:opt+space=toggle_quick_terminal
