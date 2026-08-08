@@ -21,24 +21,39 @@ mv ~/.config/fish/config.fish ~/backup/config.fish.backup
 echo "Existing configs backed up to ~/backup/"
 ```
 
-### 3. install.sh を実行
+### 3. install-apps.sh を実行
 
 ```bash
-bash install.sh
+bash install-apps.sh
 ```
 
 Homebrew・各種パッケージ・GUIアプリのインストールが行われる。
 
-### 4. link.sh を実行
+### 4. install-vscode-extensions.sh を実行
+
+```bash
+bash install-vscode-extensions.sh
+```
+
+vscode-extensions.txt に記載された VSCode 拡張機能が一括インストールされる。
+
+### 5. link.sh を実行
 
 ```bash
 bash link.sh
 ```
 
 各設定ファイルのシンボリックリンクが作成される。
-役割ごとにファイルを分けており、インストールは install.sh、シンボリックリンク作成は link.sh が担当する。
 
-### 5. シンボリックリンクを手動で作成する場合
+役割ごとにスクリプトを分けている：
+
+| スクリプト | 役割 |
+|---|---|
+| install-apps.sh | Homebrew・パッケージ・GUIアプリのインストール |
+| install-vscode-extensions.sh | VSCode 拡張機能のインストール |
+| link.sh | 設定ファイルのシンボリックリンク作成 |
+
+### 6. シンボリックリンクを手動で作成する場合
 
 > **Note**: link.sh にシンボリックリンク作成が組み込まれているため、link.sh を実行した場合は以下の作業は不要。
 
