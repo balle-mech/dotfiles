@@ -81,13 +81,4 @@ fi
 # fisher install jethrokuan/z
 # fisher install oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository
 
-## ======== Claude Code ========
-DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
-mkdir -p ~/.claude
-ln -sf "$DOTFILES_DIR/.claude/settings.json" ~/.claude/settings.json
-
-## ======== Karabiner-Elements ========
-mkdir -p ~/.config/karabiner
-ln -sf "$DOTFILES_DIR/.config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
-
 echo 'Done!'
