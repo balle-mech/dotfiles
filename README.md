@@ -66,6 +66,11 @@ ln -sf $DOTFILES/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.
 # ghostty のリンク
 mkdir -p ~/.config/ghostty
 ln -sf $DOTFILES/.config/ghostty/config ~/.config/ghostty/config
+
+# vscode のリンク
+mkdir -p ~/Library/Application\ Support/Code/User
+ln -sf "$DOTFILES/Library/Application Support/Code/User/settings.json" ~/Library/Application\ Support/Code/User/settings.json
+ln -sf "$DOTFILES/Library/Application Support/Code/User/keybindings.json" ~/Library/Application\ Support/Code/User/keybindings.json
 ```
 
 ## 参考

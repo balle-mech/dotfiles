@@ -28,4 +28,9 @@ ln -sf "$DOTFILES_DIR/.config/karabiner/karabiner.json" ~/.config/karabiner/kara
 mkdir -p ~/.config/ghostty
 ln -sf "$DOTFILES_DIR/.config/ghostty/config" ~/.config/ghostty/config
 
+# VSCode
+mkdir -p ~/Library/Application\ Support/Code/User
+ln -sf "$DOTFILES_DIR/Library/Application Support/Code/User/settings.json" ~/Library/Application\ Support/Code/User/settings.json
+ln -sf "$DOTFILES_DIR/Library/Application Support/Code/User/keybindings.json" ~/Library/Application\ Support/Code/User/keybindings.json
+
 echo 'Done!'
