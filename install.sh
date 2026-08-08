@@ -17,24 +17,15 @@ brew update
 
 # ======== Formulae ========
 FORMULAE=(
-  azure-cli
   fish
   gh
   ghq
   git-filter-repo
   git-lfs
-  gnuplot
-  go
-  inetutils
-  libfido2
-  libgeotiff
   node
   nodebrew
   nvm
-  openssl@1.1
   peco
-  python-tk@3.10
-  rename
   tig
   tree
   wget
