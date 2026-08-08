@@ -43,6 +43,7 @@ CASKS=(
   cursor
   docker-desktop
   ghostty
+  google-japanese-ime
   karabiner-elements
   logi-options+
   notion
