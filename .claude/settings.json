@@ -30,7 +30,6 @@
       "Edit(**/.bash_profile)",
       "Edit(**/.zshrc)",
       "Edit(**/.config/fish/**)",
-      "Edit(./install.sh)",
       "Bash(curl *)",
       "Bash(wget *)",
       "Bash(nc *)",

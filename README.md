@@ -34,6 +34,10 @@ ln -sf $DOTFILES/.config/fish/config.fish ~/.config/fish/config.fish
 
 # claude code
 ln -sf $DOTFILES/.claude/settings.json ~/.claude/settings.json
+
+# karabiner のリンク
+mkdir -p ~/.config/karabiner
+ln -sf $DOTFILES/.config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
 ## 参考

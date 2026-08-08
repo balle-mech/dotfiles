@@ -1,35 +1,93 @@
-# !#/bin/bash
+#!/bin/bash
 
-# echo 'Setting up Mac...'
+set -u
 
-# # install homebrew
-# if test ! $(which brew); then
-#   echo 'install homebrew'
-#   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# else
-#   echo '\nhomebrew already installed.'
-# fi
+echo 'Setting up Mac...'
 
-# # Setup shell
-# brew install fish
-# echo '/opt/homebrew/bin/fish' | sudo tee -a /etc/shells
-# chsh -s /opt/homebrew/bin/fish_path
+# ======== Homebrew ========
+if ! command -v brew &>/dev/null; then
+  echo 'install homebrew'
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  echo 'homebrew already installed.'
+fi
+
+brew update
+
+# ======== Formulae ========
+FORMULAE=(
+  azure-cli
+  fish
+  gh
+  ghq
+  git-filter-repo
+  git-lfs
+  gnuplot
+  go
+  inetutils
+  libfido2
+  libgeotiff
+  node
+  nodebrew
+  nvm
+  openssl@1.1
+  peco
+  python-tk@3.10
+  rename
+  tig
+  tree
+  wget
+  z
+)
+
+for formula in "${FORMULAE[@]}"; do
+  brew install "$formula"
+done
+
+# ======== Casks ========
+CASKS=(
+  alt-tab
+  appcleaner
+  cursor
+  ghostty
+  karabiner-elements
+  logi-options+
+  notion
+  google-chrome
+  notion-calendar
+  obsidian
+  raycast
+  rectangle
+  skitch
+  tailscale-app
+  vanilla
+  visual-studio-code
+  xmind
+)
+
+for cask in "${CASKS[@]}"; do
+  brew install --cask "$cask"
+done
+
+# ======== Shell (fish) ========
+if ! grep -q '/opt/homebrew/bin/fish' /etc/shells; then
+  echo '/opt/homebrew/bin/fish' | sudo tee -a /etc/shells
+  chsh -s /opt/homebrew/bin/fish
+fi
+
+# ======== fisher plugins ========
 # fisher install oh-my-fish/theme-bobthefish
-
-# # Update Homebrew recipes
-# brew update
-
-## ======== Install Packages ========
-### ========= z =========
-# brew install z
 # fisher install jethrokuan/z
-
-# brew install git
-# brew install tig
-# brew install --cask ghostty
-# brew install peco ghq
 # fisher install oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository
 
 ## ======== Claude Code ========
 DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+mkdir -p ~/.claude
 ln -sf "$DOTFILES_DIR/.claude/settings.json" ~/.claude/settings.json
+
+## ======== Karabiner-Elements ========
+mkdir -p ~/.config/karabiner
+ln -sf "$DOTFILES_DIR/.config/karabiner/karabiner.json" ~/.config/karabiner/karabiner.json
+
+echo 'Done!'
