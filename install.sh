@@ -18,7 +18,6 @@ brew update
 # ======== Formulae ========
 FORMULAE=(
   azure-cli
-  docker
   fish
   gh
   ghq
