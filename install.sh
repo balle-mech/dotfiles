@@ -83,4 +83,12 @@ if ! command -v claude &>/dev/null; then
   curl -fsSL https://claude.ai/install.sh | bash
 fi
 
+# ======== VSCode extensions ========
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+if command -v code &>/dev/null; then
+  while read -r extension; do
+    code --install-extension "$extension"
+  done < "$DOTFILES_DIR/vscode-extensions.txt"
+fi
+
 echo 'Done!'
