@@ -68,9 +68,11 @@ if ! grep -q '/opt/homebrew/bin/fish' /etc/shells; then
   chsh -s /opt/homebrew/bin/fish
 fi
 
-# ======== fisher plugins ========
-# fisher install oh-my-fish/theme-bobthefish
-# fisher install jethrokuan/z
-# fisher install oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository
+# ======== fisher & plugins ========
+if ! fish -c 'type -q fisher' &>/dev/null; then
+  echo 'install fisher'
+  fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
+fi
+fish -c 'fisher install oh-my-fish/theme-bobthefish jethrokuan/z oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository'
 
 echo 'Done!'
