@@ -75,4 +75,10 @@ if ! fish -c 'type -q fisher' &>/dev/null; then
 fi
 fish -c 'fisher install oh-my-fish/theme-bobthefish jethrokuan/z oh-my-fish/plugin-peco yoshiori/fish-peco_select_ghq_repository'
 
+# ======== Claude Code ========
+if ! command -v claude &>/dev/null; then
+  echo 'install claude code'
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
 echo 'Done!'
