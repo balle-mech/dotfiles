@@ -65,6 +65,8 @@ done
 # ======== Shell (fish) ========
 if ! grep -q '/opt/homebrew/bin/fish' /etc/shells; then
   echo '/opt/homebrew/bin/fish' | sudo tee -a /etc/shells
+fi
+if [ "$SHELL" != "/opt/homebrew/bin/fish" ]; then
   chsh -s /opt/homebrew/bin/fish
 fi
 
