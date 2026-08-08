@@ -50,6 +50,7 @@ CASKS=(
   alt-tab
   appcleaner
   cursor
+  docker-desktop
   ghostty
   karabiner-elements
   logi-options+
