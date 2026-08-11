@@ -88,6 +88,59 @@ ln -sf "$DOTFILES/Library/Application Support/Code/User/settings.json" ~/Library
 ln -sf "$DOTFILES/Library/Application Support/Code/User/keybindings.json" ~/Library/Application\ Support/Code/User/keybindings.json
 ```
 
+## zsh の見た目（テーマ・プラグイン）初期セットアップ手順
+
+.zshrc は oh-my-zsh + cobalt2 テーマ + カスタムプラグインを前提としている。新しいマシンでは以下を順に実行する。
+
+### 1. oh-my-zsh のインストール
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+cobalt2 テーマは oh-my-zsh に同梱されているため追加インストール不要。
+
+### 2. Powerline 対応フォントのインストール
+
+cobalt2 テーマの矢印記号などを正しく表示するために必要。
+
+```bash
+brew install --cask font-meslo-lg-nerd-font
+```
+
+インストール後、ターミナル（Ghostty / VSCode など）のフォント設定を `MesloLGS Nerd Font` 等に変更する。
+
+### 3. カスタムプラグインのインストール
+
+oh-my-zsh に同梱されていないプラグインを `$ZSH_CUSTOM/plugins` に clone する。
+
+```bash
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH_CUSTOM/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
+```
+
+各プラグインの役割：
+
+| プラグイン | 役割 |
+|---|---|
+| zsh-autosuggestions | 履歴からコマンドを薄字でサジェスト |
+| zsh-syntax-highlighting | コマンドラインをシンタックスハイライト |
+| zsh-history-substring-search | 入力中の文字列で履歴を部分一致検索 |
+| zsh-completions | 補完定義の追加（plugins ではなく fpath 経由で読み込み） |
+
+> **Note**: ロード順には公式推奨があり、zsh-syntax-highlighting は他プラグインより後、zsh-history-substring-search はさらにその後に置く必要がある。.zshrc の `plugins=(...)` はこの順序で記載済み。
+
+### 4. 反映
+
+```bash
+ln -sf ~/src/github.com/balle-mech/dotfiles/.zshrc ~/.zshrc
+exec zsh
+```
+
 ## 参考
 
 - [dotfiles リポジトリ作成](https://qiita.com/yutkat/items/c6c7584d9795799ee164)
