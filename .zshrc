@@ -31,24 +31,6 @@ eval "$(direnv hook zsh)"
 # z
 . ~/z/z.sh
 
-# minifoge
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/fukunagaatsushi/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/fukunagaatsushi/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/fukunagaatsushi/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/fukunagaatsushi/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
 #######  `alias` #######
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -60,13 +42,18 @@ alias python=python3.10
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="cobalt2"
 
+# zsh-completions は plugins に入れず fpath へ追加するのが公式推奨
+# （oh-my-zsh の compinit 実行前に読み込まれる必要があるため）
+fpath+="${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-completions/src"
+
+# 注意: zsh-syntax-highlighting は他プラグインより後にロードする必要がある
+#       zsh-history-substring-search はさらにその後に置く（公式推奨の順序）
 plugins=(
-	git
-	zsh-syntax-highlighting
-  zsh-completions
+  git
   zsh-autosuggestions
+  zsh-syntax-highlighting
   zsh-history-substring-search
-	)
+)
 
 source $ZSH/oh-my-zsh.sh
 
