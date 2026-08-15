@@ -37,7 +37,19 @@ bash install-vscode-extensions.sh
 
 vscode-extensions.txt に記載された VSCode 拡張機能が一括インストールされる。
 
-### 5. link.sh を実行
+### 5. install-rectangle-settings.sh を実行
+
+```bash
+bash install-rectangle-settings.sh
+```
+
+Rectangle のウインドウ操作ショートカットが設定される。
+
+- `Control + Shift + ←` : 左半分にリサイズ
+- `Control + Shift + →` : 右半分にリサイズ
+- 同じショートカットを繰り返し押すと、ウインドウ幅が `1/2 → 2/3 → 1/3` の3段階で切り替わる（Spectacle 互換の挙動）
+
+### 6. link.sh を実行
 
 ```bash
 bash link.sh
@@ -51,9 +63,10 @@ bash link.sh
 |---|---|
 | install-apps.sh | Homebrew・パッケージ・GUIアプリのインストール |
 | install-vscode-extensions.sh | VSCode 拡張機能のインストール |
+| install-rectangle-settings.sh | Rectangle のウインドウ操作ショートカット設定 |
 | link.sh | 設定ファイルのシンボリックリンク作成 |
 
-### 6. シンボリックリンクを手動で作成する場合
+### 7. シンボリックリンクを手動で作成する場合
 
 > **Note**: link.sh にシンボリックリンク作成が組み込まれているため、link.sh を実行した場合は以下の作業は不要。
 
