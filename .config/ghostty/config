@@ -86,4 +86,4 @@ keybind = cmd+down=jump_to_prompt:1
 
 # クイックターミナル機能（どのアプリからでも呼び出せる）
 quick-terminal-position = right
-keybind = global:opt+space=toggle_quick_terminal
+keybind = global:cmd+g=toggle_quick_terminal
