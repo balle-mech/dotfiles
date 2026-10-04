@@ -349,7 +349,9 @@
     "Raspberrypi4": "linux",
     "ballemech.local": "linux",
     "balle.local": "linux",
-    "192.168.64.4": "linux"
+    "192.168.64.4": "linux",
+    "balle.tailscale": "linux",
+    "mini.tailscale": "macOS"
   },
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "git.suggestSmartCommit": false,
